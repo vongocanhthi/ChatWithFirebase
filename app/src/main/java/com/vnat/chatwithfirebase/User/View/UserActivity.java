@@ -2,11 +2,11 @@ package com.vnat.chatwithfirebase.User.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.vnat.chatwithfirebase.Helper.RecyclerViewItemClickListener;
+import com.vnat.chatwithfirebase.Message.View.MessageActivity;
 import com.vnat.chatwithfirebase.R;
 import com.vnat.chatwithfirebase.User.Adapter.UserAdapter;
 import com.vnat.chatwithfirebase.User.Model.User;
@@ -46,7 +48,23 @@ public class UserActivity extends AppCompatActivity {
         init();
 
         funDisplayUser();
+        funClickUser();
 
+    }
+
+    private void funClickUser() {
+//        rcvUser.addOnItemTouchListener(new RecyclerViewItemClickListener(this, rcvUser, new RecyclerViewItemClickListener.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Intent intent = new Intent(UserActivity.this, MessageActivity.class);
+//                startActivity(intent);
+//            }
+//
+//            @Override
+//            public void onLongItemClick(View view, int position) {
+//
+//            }
+//        }));
     }
 
     private void funDisplayUser() {

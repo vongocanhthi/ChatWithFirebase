@@ -6,11 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_user"/>
+
+        <TextView
+            android:id="@+id/txtFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="Full Name"/>
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvMessage"
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/layoutBottom"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:padding="5dp" />
 
     <LinearLayout
@@ -36,8 +63,10 @@
             android:id="@+id/imgSend"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginEnd="3dp"
-            android:src="@drawable/ic_send" />
+            android:src="@drawable/selector_send" />
     </LinearLayout>
 
 </RelativeLayout>
